@@ -4,7 +4,7 @@ import './NewTask.css'
 import TaskForm from "./TaskForm"
 
 const NewTask = (props) => {
-    const [addFormVisible, setAddForm] = useState(false)
+    const [addFormVisible, setAddForm] = useState(true)
     const saveTaskDataHandler = (enteredTaskData) => {
         const taskData = {
             ...enteredTaskData,
