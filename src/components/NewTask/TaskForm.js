@@ -44,18 +44,18 @@ const TaskForm = (props) => {
                         <input type="text" onChange={titleChangeHandler} value={enteredTitle}/>
                     </div>
                     <div className="new-task__control">
-                        <label>Select task priority</label>
-                        <select onChange={priorityChangeHandler} value={enteredPriority}>
-                            <option value="1">Low</option>
-                            <option value="2">Medium</option>
-                            <option value="3">High</option>
-                            <option value="4">Urgent</option>
-                        </select>
-                    </div>
-                    <div className="new-task__control">
                         <label>Date</label>
                         <input type="date" min="2023-01-18" max="2025-12-31" onChange={dateChangeHandler}
                                value={enteredDate}/>
+                    </div>
+                    <div className="new-task__control">
+                        <label>Select task priority</label>
+                        <select onChange={priorityChangeHandler} value={enteredPriority}>
+                            <option value="1">low</option>
+                            <option value="2">medium</option>
+                            <option value="3">high</option>
+                            <option value="4">urgent</option>
+                        </select>
                     </div>
                 </div>
                 <div className="new-task__actions">

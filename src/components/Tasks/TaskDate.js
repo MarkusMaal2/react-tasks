@@ -7,15 +7,7 @@ function TaskDate(props) {
 
     return (
         <div className="task-date">
-            <div className="task-date__month">
-                {month}
-            </div>
-            <div className="task-date__day">
-                {day}
-            </div>
-            <div className="task-date__year">
-                {year}
-            </div>
+            {month} {day} {year}
         </div>
     )
 }

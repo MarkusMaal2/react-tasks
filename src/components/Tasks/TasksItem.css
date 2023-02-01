@@ -6,8 +6,8 @@
     padding: 0.5rem;
     margin: 1rem 0;
     border-radius: 12px;
-    background-color: #4b4b4b;
-    color: #ffffff;
+    background-color: #f6dbfc;
+    color: black;
 }
 
 .tasks-item__description {
@@ -24,7 +24,8 @@
     font-size: 1rem;
     flex: 1;
     margin: 0 1rem;
-    color: white;
+    color: #5B005B;
+    font-weight: normal;
 }
 
 
