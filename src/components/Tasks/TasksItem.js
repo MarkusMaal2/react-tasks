@@ -2,6 +2,7 @@ import React from "react";
 
 import './TasksItem.css'
 import TaskDate from "./TaskDate";
+import TaskPriority from "./TaskPriority"
 import Card from "../UI/Card";
 
 function TaskItem(props) {
@@ -22,8 +23,8 @@ function TaskItem(props) {
                     <h2>
                         {props.title}
                     </h2>
-                    <div className="tasks-item__price">
-                        {props.priority}
+                    <div className="tasks-item__priority">
+                        <TaskPriority priority={props.priority} />
                     </div>
                 </div>
             </Card></li>

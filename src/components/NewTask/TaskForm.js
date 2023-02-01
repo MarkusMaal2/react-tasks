@@ -11,7 +11,8 @@ const TaskForm = (props) => {
     }
 
     const priorityChangeHandler = (e) => {
-        setEnteredPriority(e.target.value)
+        setEnteredPriority(Number(e.target.value))
+        console.log(enteredPriority)
     }
 
     const dateChangeHandler = (e) => {
@@ -26,7 +27,6 @@ const TaskForm = (props) => {
             date: new Date(enteredDate)
         }
         //console.log(taskData)
-        props.onToggleForm(props.formVisible)
         props.onSaveTaskData(taskData)
         setEnteredTitle('')
         setEnteredDate('')
@@ -45,7 +45,7 @@ const TaskForm = (props) => {
                     </div>
                     <div className="new-task__control">
                         <label>Select task priority</label>
-                        <select onChange={priorityChangeHandler} value={enteredPriority}>
+                        <select onChange={priorityChangeHandler}>
                             <option value="1">Low</option>
                             <option value="2">Medium</option>
                             <option value="3">High</option>

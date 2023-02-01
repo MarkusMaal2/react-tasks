@@ -9,14 +9,12 @@ function Tasks(props) {
     const [currentPriority, setCurrentPriority] = useState(props.currentPriority)
     // create an array of filtered tasks with specified priority
     let filteredTasks
-    if (currentPriority !== 0) {
+    if (currentPriority > 0) {
         filteredTasks = props.tasks.filter((item) => {
             return item.priority === Number(currentPriority)
         })
     } else {
-        filteredTasks = props.tasks.map((task) => {
-            return task
-        })
+        filteredTasks = props.tasks
     }
 
     // display result
