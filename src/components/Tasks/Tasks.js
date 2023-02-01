@@ -1,16 +1,29 @@
 import './Tasks.css'
-
-import TaskList from './TaskList'
-import TaskFilter from './TaskFilter'
-import React from "react";
+//import ExpenseItem from "./ExpenseItem";
+import TaskList from "./TaskList";
+import TaskFilter from "./TaskFilter";
+import Card from "../UI/Card";
+import React, {useState} from "react";
 
 function Tasks(props) {
+    const [currentPriority, setCurrentPriority] = useState(props.currentPriority)
+    // create an array of filtered tasks with specified priority
+    let filteredTasks
+    console.log(props.tasks)
+    if (currentPriority !== 0) {
+        filteredTasks = props.tasks.filter((item) => {
+            return item.priority === Number(currentPriority)
+        })
+    } else {
+        filteredTasks = props.tasks;
+    }
+
+    // display result
     return (
-        <div>
-            <p>Tasks</p>
-            <TaskFilter></TaskFilter>
-            <TaskList></TaskList>
-        </div>
+        <Card className="tasks">
+            <TaskFilter onModifyTaskFilter={(priority) => { setCurrentPriority(priority); props.onChangePriority(currentPriority);}}></TaskFilter>
+            <TaskList filteredTasks={filteredTasks} />
+        </Card>
     )
 }
 
