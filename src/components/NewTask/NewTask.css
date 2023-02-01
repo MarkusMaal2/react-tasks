@@ -1,6 +1,6 @@
 .new-task {
-    background-color: #a892ee;
-    padding: 1rem;
+    background-color: white;
+    padding: 5rem;
     margin: 2rem auto;
     width: 50rem;
     max-width: 95%;
@@ -12,12 +12,13 @@
 .new-task button {
     font: inherit;
     cursor: pointer;
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
     border: 1px solid #40005d;
     background-color: #40005d;
     color: white;
-    border-radius: 12px;
+    border-radius: 30px;
     margin-right: 1rem;
+    font-size: 1.1rem;
 }
 
 .new-task button:hover,

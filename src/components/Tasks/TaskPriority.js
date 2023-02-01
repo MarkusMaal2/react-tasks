@@ -1,5 +1,7 @@
 import React from "react";
 import './TaskPriority.css'
+
+
 const TaskPriority = (props) => {
     let priority = props.priority;
     let strPriority = ""
@@ -11,6 +13,8 @@ const TaskPriority = (props) => {
         case 3: strPriority = "high"
             break
         case 4: strPriority = "urgent"
+            break
+        default: strPriority = "invalid"
             break
     }
     return (

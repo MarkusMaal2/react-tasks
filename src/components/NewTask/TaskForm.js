@@ -3,7 +3,7 @@ import './TaskForm.css'
 
 const TaskForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('')
-    const [enteredPriority, setEnteredPriority] = useState('')
+    const [enteredPriority, setEnteredPriority] = useState(1)
     const [enteredDate, setEnteredDate] = useState('')
 
     const titleChangeHandler = (e) => {
@@ -12,7 +12,6 @@ const TaskForm = (props) => {
 
     const priorityChangeHandler = (e) => {
         setEnteredPriority(Number(e.target.value))
-        console.log(enteredPriority)
     }
 
     const dateChangeHandler = (e) => {
@@ -21,6 +20,7 @@ const TaskForm = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault()
+
         const taskData = {
             title: enteredTitle,
             priority: enteredPriority,
@@ -45,7 +45,7 @@ const TaskForm = (props) => {
                     </div>
                     <div className="new-task__control">
                         <label>Select task priority</label>
-                        <select onChange={priorityChangeHandler}>
+                        <select onChange={priorityChangeHandler} value={enteredPriority}>
                             <option value="1">Low</option>
                             <option value="2">Medium</option>
                             <option value="3">High</option>
@@ -60,7 +60,6 @@ const TaskForm = (props) => {
                 </div>
                 <div className="new-task__actions">
                     <button type="submit">Add task</button>
-                    <button type="submit">Cancel</button>
                 </div>
             </form>
         </div>

@@ -9,7 +9,11 @@ const NewTask = (props) => {
             ...enteredTaskData,
             id: Math.random().toString()
         }
-        props.onAddTask(taskData)
+        if (isNaN(enteredTaskData.date)) {
+            alert("The date is invalid")
+        } else {
+            props.onAddTask(taskData)
+        }
     }
 
     return (
