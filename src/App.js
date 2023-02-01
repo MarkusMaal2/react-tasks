@@ -42,7 +42,7 @@ const App = () => {
     return (
         <div className="App">
             <NewTask onAddTask={addTaskHandler}></NewTask>
-            <Tasks onChangePriority={changePriorityHandler} tasks={tasks} currentYear={currentPriority}/>
+            <Tasks onChangePriority={changePriorityHandler} tasks={tasks} currentPriority={currentPriority}/>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import './Tasks.css'
-//import ExpenseItem from "./ExpenseItem";
+//import TasksItem from "./TasksItem";
 import TaskList from "./TaskList";
 import TaskFilter from "./TaskFilter";
 import Card from "../UI/Card";
@@ -9,13 +9,14 @@ function Tasks(props) {
     const [currentPriority, setCurrentPriority] = useState(props.currentPriority)
     // create an array of filtered tasks with specified priority
     let filteredTasks
-    console.log(props.tasks)
     if (currentPriority !== 0) {
         filteredTasks = props.tasks.filter((item) => {
             return item.priority === Number(currentPriority)
         })
     } else {
-        filteredTasks = props.tasks;
+        filteredTasks = props.tasks.map((task) => {
+            return task
+        })
     }
 
     // display result

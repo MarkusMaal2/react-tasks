@@ -1,10 +1,9 @@
-import React, {useState} from "react"
+import React from "react"
 import './NewTask.css'
 
 import TaskForm from "./TaskForm"
 
 const NewTask = (props) => {
-    const [addFormVisible, setAddForm] = useState(true)
     const saveTaskDataHandler = (enteredTaskData) => {
         const taskData = {
             ...enteredTaskData,
@@ -12,13 +11,10 @@ const NewTask = (props) => {
         }
         props.onAddTask(taskData)
     }
-    const toggleFormHandler = () => {
-        setAddForm(!addFormVisible)
-    }
 
     return (
         <div className="new-task">
-            <TaskForm onToggleForm={toggleFormHandler} onSaveTaskData={saveTaskDataHandler} formVisible={addFormVisible}></TaskForm>
+            <TaskForm onSaveTaskData={saveTaskDataHandler}></TaskForm>
         </div>
     )
 }

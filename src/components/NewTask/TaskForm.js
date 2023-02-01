@@ -34,43 +34,35 @@ const TaskForm = (props) => {
 
     }
 
-    const toggleVisibleHandler = (e) => {
-        props.onToggleForm(props.formVisible)
-        e.preventDefault()
-    }
-
     return (
 
         <div>
-            { props.formVisible &&
-                <form onSubmit={submitHandler}>
-                    <div className="new-task__controls">
-                        <div className="new-task__control">
-                            <label>Title</label>
-                            <input type="text" onChange={titleChangeHandler} value={enteredTitle}/>
-                        </div>
-                        <div className="new-task__control">
-                            <label>Priority</label>
-                            <input type="number" min="0.01" step="0.01" onChange={priorityChangeHandler}
-                                   value={enteredPriority}/>
-                        </div>
-                        <div className="new-task__control">
-                            <label>Date</label>
-                            <input type="date" min="2023-01-18" max="2025-12-31" onChange={dateChangeHandler}
-                                   value={enteredDate}/>
-                        </div>
+            <form onSubmit={submitHandler}>
+                <div className="new-task__controls">
+                    <div className="new-task__control">
+                        <label>New Task</label>
+                        <input type="text" onChange={titleChangeHandler} value={enteredTitle}/>
                     </div>
-                    <div className="new-task__actions">
-                        <button type="submit">Add task</button>
-                        <button type="submit">Cancel</button>
+                    <div className="new-task__control">
+                        <label>Select task priority</label>
+                        <select onChange={priorityChangeHandler} value={enteredPriority}>
+                            <option value="1">Low</option>
+                            <option value="2">Medium</option>
+                            <option value="3">High</option>
+                            <option value="4">Urgent</option>
+                        </select>
                     </div>
-                </form>
-            }
-            { !props.formVisible &&
-                <form onSubmit={toggleVisibleHandler}>
-                    <div className="new-task__actions"><button type="submit">Add task</button></div>
-                </form>
-            }
+                    <div className="new-task__control">
+                        <label>Date</label>
+                        <input type="date" min="2023-01-18" max="2025-12-31" onChange={dateChangeHandler}
+                               value={enteredDate}/>
+                    </div>
+                </div>
+                <div className="new-task__actions">
+                    <button type="submit">Add task</button>
+                    <button type="submit">Cancel</button>
+                </div>
+            </form>
         </div>
     )
 }
