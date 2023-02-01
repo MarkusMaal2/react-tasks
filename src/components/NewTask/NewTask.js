@@ -17,7 +17,7 @@ const NewTask = (props) => {
     }
 
     return (
-        <div className="new-expense">
+        <div className="new-task">
             <TaskForm onToggleForm={toggleFormHandler} onSaveTaskData={saveTaskDataHandler} formVisible={addFormVisible}></TaskForm>
         </div>
     )
