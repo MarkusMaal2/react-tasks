@@ -30,7 +30,7 @@ const TaskForm = (props) => {
         props.onSaveTaskData(taskData)
         setEnteredTitle('')
         setEnteredDate('')
-        setEnteredPriority('')
+        setEnteredPriority(1)
 
     }
 
