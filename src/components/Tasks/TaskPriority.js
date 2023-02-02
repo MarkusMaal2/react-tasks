@@ -18,9 +18,9 @@ const TaskPriority = (props) => {
             break
     }
     return (
-        <li>
+        <div>
             {strPriority}
-        </li>
+        </div>
     )
 }
 
