@@ -59,7 +59,7 @@ const TaskForm = (props) => {
                     </div>
                 </div>
                 <div className="new-task__actions">
-                    <button type="submit">Add task</button>
+                    <button id="add-task-btn" type="submit">Add task</button>
                 </div>
             </form>
         </div>
